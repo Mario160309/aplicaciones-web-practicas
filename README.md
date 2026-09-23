@@ -8,5 +8,3 @@ Repositorio con las memorias de las prácticas del módulo de Aplicaciones Web.
 | Nº | Práctica                   | Memoria                                              |
 |----|----------------------------|------------------------------------------------------|
 | 1  | Prueba de Markdown         | [Ver memoria](./Practica-01-html-basico/memoria.md)  |
-| 2  | CSS y Flexbox              | [Ver memoria](./practica-02-css-flexbox/memoria.md)  |
-| 3  | Formularios web            | [Ver memoria](./practica-03-formularios/memoria.md)  |
