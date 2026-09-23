@@ -18,8 +18,8 @@ Numerada
 3. Tercer paso
 
 Enlaces
-[Texto del enlace](https://www.direccion-del-enlace.com)
-[Memoria de la práctica 1](./practica-01-html-basico/memoria.md)
+[Texto del enlace](https://www.google.com/)
+[Memoria de la práctica 1](./Practica-01-html-basico/memoria.md)
 
 Imagenes
 ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original)
