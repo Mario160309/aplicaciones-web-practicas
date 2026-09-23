@@ -5,8 +5,7 @@ Repositorio con las memorias de las prácticas del módulo de Aplicaciones Web.
 **Alumno/a:** Mario Alemany
 **Curso:** 2º SMR
 ## Índice de prácticas
-| Nº | Práctica | Memoria
-|
+| Nº | Práctica                   | Memoria                                              |
 |----|----------------------------|------------------------------------------------------|
 | 1  | Introducción a HTML básico | [Ver memoria](./Practica-01-html-basico/memoria.md)  |
 | 2  | CSS y Flexbox              | [Ver memoria](./practica-02-css-flexbox/memoria.md)  |
