@@ -39,16 +39,12 @@ Tablas
 
 Lineas horizontales (separadores)
 ---
-
-aplicaciones-web-practicas/
-│
-├── README.md
-├── practica-01-html-basico/
-│ ├── memoria.md
-│ └── imagenes/
-├── practica-02-css-flexbox/
-│ ├── memoria.md
-│ └── imagenes/
-└── practica-03-formularios/
-├── memoria.md
-└── imagenes/
+# Práctica 1 – Introducción a HTML básico
+## Objetivo
+EMpezar a familiarizarse con html.
+## Desarrollo
+Probar las diferentes caracteristicas que se pueden aplicar a textos en html.
+## Resultado
+Qué se ha conseguido, capturas del resultado final.
+## Conclusiones
+Dificultades encontradas y qué has aprendido.
