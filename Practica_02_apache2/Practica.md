@@ -64,4 +64,8 @@ Las modificaciones que vamos a hacer son las siguientes: <br>
 Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, ```sudo systemctl reload apache2``` y ```curl -I http://localhost:8080``` <br>
   ![Captura del resultado final](./Imagenes/6.2.png)<br>
   **3. Definir el nombre del servidor**
-  Esto lo vamos a hacer para eliminar el aviso que salia de *"Could not neriably determine the server's fully qualified name"*. Esto lo haremos con los siguientes comandos ```echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf```, ```sudo a2enconf servername``` y ```sudo systemctl reload apache2```
+  Esto lo vamos a hacer para eliminar el aviso que salia de *"Could not neriably determine the server's fully qualified name"*. Esto lo haremos con los siguientes comandos ```echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf```, ```sudo a2enconf servername``` y ```sudo systemctl reload apache2``` <br>
+ ![Captura del resultado final](./Imagenes/6.3.png)<br>
+ **4. Cambiar el correo del administrador**
+ Para esto entraremos en el fichero 000-default.conf con el comando ```sudo nano /etc/apache2/sites-available/000-default.conf``` y cambiaremos el ServerAdmin por nuestro correo <br>
+  ![Captura del resultado final](./Imagenes/6.4.png)<br>
