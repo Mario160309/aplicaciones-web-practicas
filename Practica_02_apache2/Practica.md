@@ -16,7 +16,20 @@ Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en
   3. Para hacer pruebas las podemos hacer en la terminal o desde el navegador, en la terminal tendriamos que poner el siguiente comando ```curl -I http://localhost``` o en el navegador escribir lo siguiete *http://IP_DE_TU_SERVIDOR.*
      ![Captura del resultado final](./Imagenes/Captura_4.png)<br>
   4. Ahora comprobaremos si el Firewall esta activo y le diremos que deje a 'Apache' hacer lo que tenga que hacer con los siguientes comandos ```sudo ufw status``` y ```sudo ufw allow 'Apache'```
-**¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?**
         ![Captura del resultado final](./Imagenes/Captura_5.png)<br>
+**¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?**<br>
 ### Apartado 4. Comandos principales de administración
 En este apartado vamos a probar varios comandos de apache
+|Comando    |Resultado    |
+|```sudo systemctl start apache2```|
+|```sudo systemctl stop apache2```
+|```sudo systemctl restart apache2```
+|```sudo systemctl reload apache2```
+|```sudo systemctl enable apache2```
+|```sudo systemctl enable apache2```
+|```apache2ctl configtest```
+|```apache2ctl -S```
+|```apache2ctl -M```
+|```a2enmod / a2dismod```
+|```a2ensite / a2dissite```
+|```a2enconf / a2disconf```
