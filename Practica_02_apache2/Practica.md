@@ -56,7 +56,7 @@ Para explorar la estructura y configuracion del servidor utilizaremos el comando
 Ahora como vamos a hacer modificaciones al servidor, vamos a hacer una copia de seguridad para que en el caso que algo falle no perdamos el servidor por completo, esto lo haremos con el comando ```sudo cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak```
 Las modificaciones que vamos a hacer son las siguientes: <br>
   **1. Cambiar la página de inicio**<br>
-  Para esto utilizaremos el siguiente comando ```echo "<h1>Servidor de TU NOMBRE</h1>" | sudo tee /var/www/html/index.html```
+  Para esto utilizaremos el siguiente comando ```echo "<h1>Servidor de TU NOMBRE</h1>" | sudo tee /var/www/html/index.html``` <br>
   ![Captura del resultado final](./Imagenes/6.1.png)<br>
   **2. Cambiar el puerto de escucha**<br>
   Para esto vamos a necesitar utilizar ```sudo nano /etc/apache2/ports.conf```, aqui cambiaremos Listen 80 por Listen 8080, y ```sudo nano /etc/apache2/sites-available/000-default.conf``` donde cambiaremos *<VirtualHost *:80>** por *<VirtualHost *:8080>**
