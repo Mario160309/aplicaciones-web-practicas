@@ -34,3 +34,19 @@ En este apartado vamos a probar varios comandos de apache
 |```a2enmod / a2dismod```             |Activa / desactiva módulos                     |
 |```a2ensite / a2dissite```           |Activa / desactiva sitios                      |
 |```a2enconf / a2disconf```           |Activa / desactiva fragmentos de configuración |
+**¿Cuándo conviene usar reload en lugar de restart?**
+### Apartado 5. Ficheros y directorios importantes
+Para explorar la estructura y configuracion del servidor utilizaremos el comando ```ls -l /etc/apache2/```
+![Captura del resultado final](./Imagenes/Captura_6.png)<br>
+|Ruta                                            |Descripción                                    |
+|------------------------------------------------|-----------------------------------------------|
+|*/etc/apache2/apache2.conf*                     |Fichero de configuración principal             |
+|*/etc/apache2/ports.conf*                       |Puertos en los que escucha Apache              |
+|*/etc/apache2/sites-available/*                 |Sitios disponibles (definidos, no necesariamente activos)|
+|*/etc/apache2/sites-enabled/*                   |Sitios activos (enlaces simbólicos a sites-available) |
+|*/etc/apache2/mods-available/ y mods-enabled/*  |Módulos disponibles y activos     |
+|*/etc/apache2/conf-available/ y conf-enabled/*  |Fragmentos de configuración disponibles y activos            |
+|*/etc/apache2/envvars*                          |Variables de entorno (usuario y grupo de ejecución, etc.)      |
+|*/var/www/html/*                                |Directorio raíz por defecto (DocumentRoot)    |
+|*/var/log/apache2/access.log*                   |Registro de accesos                     |
+|*/var/log/apache2/error.log*                    |Registro de errores                    |
