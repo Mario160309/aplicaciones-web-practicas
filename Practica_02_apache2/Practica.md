@@ -1,16 +1,16 @@
 # Práctica: Instalación, configuración y securización de Apache en Ubuntu 24.04
 ## 4. Desarrollo de la práctica
 ### Apartado 1. Preparación del sistema
-Primero actualizaremos los repositorios de ubuntu con el comando ```sudo apt update```
+- Primero actualizaremos los repositorios de ubuntu con el comando ```sudo apt update```
 ![Captura del resultado final](./Imagenes/Captura_1.png)<br>
-Y comprobaremos la version del sistema con ```lsb_release -a```<br>
+- Y comprobaremos la version del sistema con ```lsb_release -a```<br>
 ![Captura del resultado final](./Imagenes/Captura_2.png)<br>
 ### Apartado 2. Instalación de Apache
-Ahora instalaremos Apache con el comando ```sudo apt install apache2 -y```
+- Ahora instalaremos Apache con el comando ```sudo apt install apache2 -y```
 ![Captura del resultado final](./Imagenes/Captura_3.png)<br>
 **¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).**
 ### Apartado 3. Comprobación del funcionamiento
-Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en 4 partes que son las siguientes:
+- Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en 4 partes que son las siguientes:
   1. Con el comando ```sudo systemctl status apache2``` comporbaremos el estado del servicio
   2. Con el comando ```sudo ss -tulpn | grep apache2``` comprobaremos que puertos estan escuchando
   3. Para hacer pruebas las podemos hacer en la terminal o desde el navegador, en la terminal tendriamos que poner el siguiente comando ```curl -I http://localhost``` o en el navegador escribir lo siguiete *http://IP_DE_TU_SERVIDOR.*
@@ -19,7 +19,7 @@ Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en
         ![Captura del resultado final](./Imagenes/Captura_5.png)<br>
 **¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?**<br>
 ### Apartado 4. Comandos principales de administración
-En este apartado vamos a probar varios comandos de apache
+- En este apartado vamos a probar varios comandos de apache
 |Comando                              |Resultado                                      |
 |-------------------------------------|-----------------------------------------------|
 |```sudo systemctl start apache2```   |Inicia el servicio                             |
@@ -36,7 +36,7 @@ En este apartado vamos a probar varios comandos de apache
 |```a2enconf / a2disconf```           |Activa / desactiva fragmentos de configuración |
 **¿Cuándo conviene usar reload en lugar de restart?**
 ### Apartado 5. Ficheros y directorios importantes
-Para explorar la estructura y configuracion del servidor utilizaremos el comando ```ls -l /etc/apache2/```
+- Para explorar la estructura y configuracion del servidor utilizaremos el comando ```ls -l /etc/apache2/```
 ![Captura del resultado final](./Imagenes/Captura_6.png)<br>
 |Ruta                                            |Descripción                                    |
 |------------------------------------------------|-----------------------------------------------|
@@ -50,3 +50,5 @@ Para explorar la estructura y configuracion del servidor utilizaremos el comando
 |*/var/www/html/*                                |Directorio raíz por defecto (DocumentRoot)    |
 |*/var/log/apache2/access.log*                   |Registro de accesos                     |
 |*/var/log/apache2/error.log*                    |Registro de errores                    |
+**¿Por qué Apache usa enlaces simbólicos entre los directorios *-available* y *-enabled*?**
+### Apartado 6. Modificaciones típicas del servicio
