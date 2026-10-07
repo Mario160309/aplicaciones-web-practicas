@@ -20,16 +20,17 @@ Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en
 **¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?**<br>
 ### Apartado 4. Comandos principales de administración
 En este apartado vamos a probar varios comandos de apache
-|Comando    |Resultado    |
-|```sudo systemctl start apache2```|
-|```sudo systemctl stop apache2```
-|```sudo systemctl restart apache2```
-|```sudo systemctl reload apache2```
-|```sudo systemctl enable apache2```
-|```sudo systemctl enable apache2```
-|```apache2ctl configtest```
-|```apache2ctl -S```
-|```apache2ctl -M```
-|```a2enmod / a2dismod```
-|```a2ensite / a2dissite```
-|```a2enconf / a2disconf```
+|Comando                              |Resultado                                      |
+|-------------------------------------|-----------------------------------------------|
+|```sudo systemctl start apache2```   |Inicia el servicio                             |
+|```sudo systemctl stop apache2```    |Detiene el servicio                            |
+|```sudo systemctl restart apache2``` |Reinicia (corta conexiones)                    |
+|```sudo systemctl reload apache2```  |Recarga la configuración sin cortar conexiones |
+|```sudo systemctl enable apache2```  |Arranque automático al iniciar el sistema      |
+|```sudo systemctl enable apache2```  |Desactiva el arranque automático               |
+|```apache2ctl configtest```          |Comprueba la sintaxis de la configuración      |
+|```apache2ctl -S```                  |Muestra los sitios (virtual hosts) cargados    |
+|```apache2ctl -M```                  |Lista los módulos cargados                     |
+|```a2enmod / a2dismod```             |Activa / desactiva módulos                     |
+|```a2ensite / a2dissite```           |Activa / desactiva sitios                      |
+|```a2enconf / a2disconf```           |Activa / desactiva fragmentos de configuración |
