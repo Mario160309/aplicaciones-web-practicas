@@ -70,4 +70,7 @@ Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, 
  Para esto entraremos en el fichero 000-default.conf con el comando ```sudo nano /etc/apache2/sites-available/000-default.conf``` y cambiaremos el ServerAdmin por nuestro correo <br>
   ![Captura del resultado final](./Imagenes/6.4.png)<br>
  **5. Personalizar una página de error (por ejemplo, 404) con la directiva ErrorDocument.**
- 
+ Para personalizar la pagina de error vamos a crear un html con el comando ```sudo nano /var/www/html/404.html``` y vamos a añadirle el siguiente texto dentro:<br>
+
+Para despues entrar en el fichero 000default y añadir la siguiente linea *ErrorDocument 404 /404.html*
+  ![Captura del resultado final](./Imagenes/6.5.png)<br>
