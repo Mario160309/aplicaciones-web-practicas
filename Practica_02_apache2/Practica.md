@@ -103,3 +103,5 @@ Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br
 ```sudo find /var/www/sitio1 -type d -exec chmod 755 {} \;```<br>
 ```sudo find /var/www/sitio1 -type f -exec chmod 644 {} \;```<br>
 Ahora probaremos a quitarle todos los permisos a index.html
+![Captura del resultado final](./Imagenes/error403.png)<br>
+![Captura del resultado final](./Imagenes/error_log.png)<br>
