@@ -74,6 +74,7 @@ Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, 
  ![Captura del resultado final](./Imagenes/html_pagina_error.png)<br>
 Para despues entrar en el fichero 000default y añadir la siguiente linea *ErrorDocument 404 /404.html* para que asi si da algun error vaya a la siguiente pagina:
   ![Captura del resultado final](./Imagenes/6.5.png)<br>
+  ### Apartado 7. Módulos de Apache
 |Módulo                                          |Función                                                        |
 |------------------------------------------------|---------------------------------------------------------------|
 |*mod_rewrite*                                   |Nos permite reescribir la URL del servidor                     |
@@ -82,3 +83,5 @@ Para despues entrar en el fichero 000default y añadir la siguiente linea *Error
 |*mod_dir*                                       |Se encarga de gestionar los directorios y de mostrar automáticamente un archivo de inicio          |
 |*mod_alias*                                     |Permite crear alias y redirecciones para que una URL pueda mostrar contenido ubicado en otra ruta del servidor                                  |
 |*mod_auth_basic*                                |Permite proteger páginas o directorios solicitando un nombre de usuario y una contraseña              |
+> ¿Qué ocurre si desactivas un módulo del que depende otro?
+### Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)
