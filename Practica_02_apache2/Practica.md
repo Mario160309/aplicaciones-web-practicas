@@ -89,10 +89,17 @@ En este apartado vamos a crear 2 sitios, primero vamos a crearlos con:<br>
 ```sudo mkdir -p /var/www/sitio1 /var/www/sitio2```<br>
 ```echo "<h1>Bienvenido a SITIO 1</h1>" | sudo tee /var/www/sitio1/index.html```<br>
 ```echo "<h1>Bienvenido a SITIO 2</h1>" | sudo tee /var/www/sitio2/index.html```<br>
-Y escribiremos lo siguiente en los dos .html cambiando los 1 por 2 en el sitio2
-
+Y escribiremos lo siguiente en los dos .html cambiando los 1 por 2 en el sitio2<br>
+![Captura del resultado final](./Imagenes/sitio1.png)<br>
 Y añadiremos al ficher /etc/host lo siguiente *127.0.0.1   sitio1.local sitio2.local*
 Y probaremos que funcionen con:<br>
 ```curl http://sitio1.local```<br>
 ```curl http://sitio2.local```<br>
- ![Captura del resultado final](./Imagenes/6.5.png)<br>
+ ![Captura del resultado final](./Imagenes/curl_sitios.png)<br>
+  ![Captura del resultado final](./Imagenes/apache2ctl_-S.png)<br>
+### Apartado 9. Permisos y propietarios
+Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br>
+```sudo chown -R www-data:www-data /var/www/sitio1```<br>
+```sudo find /var/www/sitio1 -type d -exec chmod 755 {} \;```<br>
+```sudo find /var/www/sitio1 -type f -exec chmod 644 {} \;```<br>
+Ahora probaremos a quitarle todos los permisos a index.html
