@@ -8,7 +8,8 @@ Y comprobaremos la version del sistema con ```lsb_release -a```<br>
 ### Apartado 2. Instalación de Apache
 Ahora instalaremos Apache con el comando ```sudo apt install apache2 -y```<br>
 ![Captura del resultado final](./Imagenes/Captura_3.png)<br>
-> ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
+> ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).<br>
+Al instalar Apache2 se instalan paquetes adicionales necesarios, como apache2-bin, apache2-data y apache2-utils
 ### Apartado 3. Comprobación del funcionamiento
 Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en 4 partes que son las siguientes:
   1. Con el comando ```sudo systemctl status apache2``` comporbaremos el estado del servicio
@@ -18,6 +19,9 @@ Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en
   4. Ahora comprobaremos si el Firewall esta activo y le diremos que deje a 'Apache' hacer lo que tenga que hacer con los siguientes comandos ```sudo ufw status``` y ```sudo ufw allow 'Apache'```<br>
         ![Captura del resultado final](./Imagenes/Captura_5.png)<br>
 > ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?<br>
+Apache: permite el tráfico HTTP por el puerto 80.<br>
+Apache Full: permite el tráfico HTTP por el puerto 80 y HTTPS por el puerto 443.<br>
+Apache Secure: permite únicamente el tráfico HTTPS por el puerto 443.<br>
 ### Apartado 4. Comandos principales de administración
 En este apartado vamos a probar varios comandos de apache
 |Comando                              |Resultado                                      |
@@ -34,7 +38,8 @@ En este apartado vamos a probar varios comandos de apache
 |```a2enmod / a2dismod```             |Activa / desactiva módulos                     |
 |```a2ensite / a2dissite```           |Activa / desactiva sitios                      |
 |```a2enconf / a2disconf```           |Activa / desactiva fragmentos de configuración |
-> ¿Cuándo conviene usar reload en lugar de restart?
+> ¿Cuándo conviene usar reload en lugar de restart?<br>
+Utilizaremos reload cuando no queramos que se detenga el servidor y queramos aplicar los cambios y restart cuando si queramos que se detenga el servidor 
 ### Apartado 5. Ficheros y directorios importantes
 Para explorar la estructura y configuracion del servidor utilizaremos el comando ```ls -l /etc/apache2/```
 ![Captura del resultado final](./Imagenes/Captura_6.png)<br>
@@ -51,7 +56,8 @@ Para explorar la estructura y configuracion del servidor utilizaremos el comando
 |*/var/log/apache2/access.log*                   |Registro de accesos                                            |
 |*/var/log/apache2/error.log*                    |Registro de errores                                            |
 
-> ¿Por qué Apache usa enlaces simbólicos entre los directorios *-available* y *-enabled*? 
+> ¿Por qué Apache usa enlaces simbólicos entre los directorios *-available* y *-enabled*?<br>
+Apache utiliza enlaces simbólicos para separar las configuraciones disponibles de las que están activadas.
 ### Apartado 6. Modificaciones típicas del servicio
 Ahora como vamos a hacer modificaciones al servidor, vamos a hacer una copia de seguridad para que en el caso que algo falle no perdamos el servidor por completo, esto lo haremos con el comando ```sudo cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak```
 Las modificaciones que vamos a hacer son las siguientes: <br>
@@ -83,7 +89,8 @@ Para despues entrar en el fichero 000default y añadir la siguiente linea *Error
 |*mod_dir*                                       |Se encarga de gestionar los directorios y de mostrar automáticamente un archivo de inicio          |
 |*mod_alias*                                     |Permite crear alias y redirecciones para que una URL pueda mostrar contenido ubicado en otra ruta del servidor                                  |
 |*mod_auth_basic*                                |Permite proteger páginas o directorios solicitando un nombre de usuario y una contraseña              |
-> ¿Qué ocurre si desactivas un módulo del que depende otro?
+> ¿Qué ocurre si desactivas un módulo del que depende otro?<br>
+Si desactivamos un módulo necesario para otro, Apache puede mostrarnos errores de configuración o impedir que el servicio se inicie correctamente.
 ### Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)
 En este apartado vamos a crear 2 sitios, primero vamos a crearlos con:<br>
 ```sudo mkdir -p /var/www/sitio1 /var/www/sitio2```<br>
@@ -97,6 +104,8 @@ Y probaremos que funcionen con:<br>
 ```curl http://sitio2.local```<br>
  ![Captura del resultado final](./Imagenes/curl_sitios.png)<br>
   ![Captura del resultado final](./Imagenes/apache2ctl_-S.png)<br>
+> ¿Qué diferencia hay entre virtual hosts basados en nombre y basados en IP? ¿Cuál has usado?<br>
+
 ### Apartado 9. Permisos y propietarios
 Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br>
 ```sudo chown -R www-data:www-data /var/www/sitio1```<br>
