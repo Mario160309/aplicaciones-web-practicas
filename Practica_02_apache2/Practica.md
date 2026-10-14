@@ -69,3 +69,5 @@ Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, 
  **4. Cambiar el correo del administrador**
  Para esto entraremos en el fichero 000-default.conf con el comando ```sudo nano /etc/apache2/sites-available/000-default.conf``` y cambiaremos el ServerAdmin por nuestro correo <br>
   ![Captura del resultado final](./Imagenes/6.4.png)<br>
+ **5. Personalizar una página de error (por ejemplo, 404) con la directiva ErrorDocument.**
+ 
