@@ -105,7 +105,7 @@ Y probaremos que funcionen con:<br>
  ![Captura del resultado final](./Imagenes/curl_sitios.png)<br>
   ![Captura del resultado final](./Imagenes/apache2ctl_-S.png)<br>
 > ¿Qué diferencia hay entre virtual hosts basados en nombre y basados en IP? ¿Cuál has usado?<br>
-
+Que las basadas en el nombre nos permiten alojar varias páginas web en una misma dirección IP y Apache identifica qué sitio debe mostrar según el nombre de dominio solicitado y las basadas en IP utilizan direcciones IP diferentes para distinguir los sitios web. En esta practica he utilizado virtual host basaados en el nombre, ya que a pesar de estsar en la misma IP se diferenciaban por el nombre
 ### Apartado 9. Permisos y propietarios
 Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br>
 ```sudo chown -R www-data:www-data /var/www/sitio1```<br>
