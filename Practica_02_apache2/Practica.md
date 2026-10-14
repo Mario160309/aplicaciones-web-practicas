@@ -71,6 +71,14 @@ Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, 
   ![Captura del resultado final](./Imagenes/6.4.png)<br>
  **5. Personalizar una página de error (por ejemplo, 404) con la directiva ErrorDocument.**
  Para personalizar la pagina de error vamos a crear un html con el comando ```sudo nano /var/www/html/404.html``` y vamos a añadirle el siguiente texto dentro:<br>
-
-Para despues entrar en el fichero 000default y añadir la siguiente linea *ErrorDocument 404 /404.html*
+ ![Captura del resultado final](./Imagenes/html_pagina_error.png)<br>
+Para despues entrar en el fichero 000default y añadir la siguiente linea *ErrorDocument 404 /404.html* para que asi si da algun error vaya a la siguiente pagina:
   ![Captura del resultado final](./Imagenes/6.5.png)<br>
+|Módulo                                          |Función                                                        |
+|------------------------------------------------|---------------------------------------------------------------|
+|*mod_rewrite*                                   |Nos permite reescribir la URL del servidor                     |
+|*mod_headers*                                   |Con esto podemos modificar la cabecera http                    |
+|*mod_ssl*                                       |Permite configurar conexiones HTTPS seguras mediante certificados SSL/TLS.     |
+|*mod_dir*                                       |Se encarga de gestionar los directorios y de mostrar automáticamente un archivo de inicio          |
+|*mod_alias*                                     |Permite crear alias y redirecciones para que una URL pueda mostrar contenido ubicado en otra ruta del servidor                                  |
+|*mod_auth_basic*                                |Permite proteger páginas o directorios solicitando un nombre de usuario y una contraseña              |
