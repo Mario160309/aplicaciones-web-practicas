@@ -85,3 +85,14 @@ Para despues entrar en el fichero 000default y añadir la siguiente linea *Error
 |*mod_auth_basic*                                |Permite proteger páginas o directorios solicitando un nombre de usuario y una contraseña              |
 > ¿Qué ocurre si desactivas un módulo del que depende otro?
 ### Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)
+En este apartado vamos a crear 2 sitios, primero vamos a crearlos con:<br>
+```sudo mkdir -p /var/www/sitio1 /var/www/sitio2```<br>
+```echo "<h1>Bienvenido a SITIO 1</h1>" | sudo tee /var/www/sitio1/index.html```<br>
+```echo "<h1>Bienvenido a SITIO 2</h1>" | sudo tee /var/www/sitio2/index.html```<br>
+Y escribiremos lo siguiente en los dos .html cambiando los 1 por 2 en el sitio2
+
+Y añadiremos al ficher /etc/host lo siguiente *127.0.0.1   sitio1.local sitio2.local*
+Y probaremos que funcionen con:<br>
+```curl http://sitio1.local```<br>
+```curl http://sitio2.local```<br>
+ ![Captura del resultado final](./Imagenes/6.5.png)<br>
