@@ -105,3 +105,11 @@ Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br
 Ahora probaremos a quitarle todos los permisos a index.html
 ![Captura del resultado final](./Imagenes/error403.png)<br>
 ![Captura del resultado final](./Imagenes/error_log.png)<br>
+
+> Qué significan 755 y 644.
+El 755 significa que el propietario puede leer, escribir y ejecutar y el grupo y los demás usuarios pueden leer y ejecutar, pero no modificar.
+El 644 significa que el propietario puede leer y escribir. El grupo y los demás usuarios solo pueden leer el archivo.
+> Por qué nunca se deben usar permisos 777 en un servidor web.
+Porque permiten que cualquier usuario pueda leer, modificar y ejecutar archivos. Esto supone un riesgo de seguridad, ya que alguien podría modificar la página web o introducir código malicioso.
+> Por qué el contenido web no debe pertenecer a root ni ser escribible por todos.
+Porque Apache necesita acceder a los archivos para mostrar la página web, pero no es necesario que tenga permisos para modificarlos. Si los archivos fueran escribibles por todos, cualquier usuario podría cambiar su contenido. Por eso, es importante establecer un propietario adecuado y permisos seguros para evitar modificaciones no autorizadas.
