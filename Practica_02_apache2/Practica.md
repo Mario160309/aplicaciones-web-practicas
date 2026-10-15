@@ -1,4 +1,4 @@
-# 🚀 MI PRÁCTICA DE APACHE
+# Práctica: Instalación, configuración y securización de Apache en Ubuntu 24.04
 
 <p align="center">
   <img src="./Imagenes/logo_apache.png" alt="Logo Apache" width="140" style="display:block; margin:0 auto;" />
@@ -16,12 +16,11 @@
 
 <br>
 
-## 👨‍💻 Datos del alumno
+##  Datos del alumno
 
-- **Nombre:** Tu nombre
+- **Nombre:** Mario ALemany Cobo
 - **Curso:** 2.º SMR
-- **Centro:** Nombre de tu instituto
-- **Fecha:** 15/10/2026
+- **Fecha:** 16/10/2026
 
 
 ---
