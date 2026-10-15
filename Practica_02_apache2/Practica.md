@@ -1,6 +1,8 @@
 # 🚀 MI PRÁCTICA DE APACHE
 
-![Captura del resultado final](./Imagenes/logo_apache.png)<br>
+<p align="center">
+  <img src="./Imagenes/logo_apache.png" alt="Logo Apache" width="140" style="display:block; margin:0 auto;" />
+</p>
 
 <p align="center">
   <strong>🌐 INSTALACIÓN · CONFIGURACIÓN · SEGURIDAD</strong>
@@ -38,7 +40,7 @@ Al instalar Apache2 se instalan paquetes adicionales necesarios, como apache2-bi
 Ahora vamos a comprobar el funcionamiento del servidos, estoy hay que hacerlo en 4 partes que son las siguientes:
   1. Con el comando ```sudo systemctl status apache2``` comporbaremos el estado del servicio
   2. Con el comando ```sudo ss -tulpn | grep apache2``` comprobaremos que puertos estan escuchando
-  3. Para hacer pruebas las podemos hacer en la terminal o desde el navegador, en la terminal tendriamos que poner el siguiente comando ```curl -I http://localhost``` o en el navegador escribir lo siguiete *http://IP_DE_TU_SERVIDOR.*
+  3. Para hacer pruebas las podemos hacer en la terminal o desde el navegador, en la terminal tendriamos que poner el siguiente comando ```curl -I http://localhost``` o en el navegador escribir lo[...]
      ![Captura del resultado final](./Imagenes/Captura_4.png)<br>
   4. Ahora comprobaremos si el Firewall esta activo y le diremos que deje a 'Apache' hacer lo que tenga que hacer con los siguientes comandos ```sudo ufw status``` y ```sudo ufw allow 'Apache'```<br>
         ![Captura del resultado final](./Imagenes/Captura_5.png)<br>
@@ -83,18 +85,18 @@ Para explorar la estructura y configuracion del servidor utilizaremos el comando
 > ¿Por qué Apache usa enlaces simbólicos entre los directorios *-available* y *-enabled*?<br>
 Apache utiliza enlaces simbólicos para separar las configuraciones disponibles de las que están activadas.
 ### Apartado 6. Modificaciones típicas del servicio
-Ahora como vamos a hacer modificaciones al servidor, vamos a hacer una copia de seguridad para que en el caso que algo falle no perdamos el servidor por completo, esto lo haremos con el comando ```sudo cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak```
+Ahora como vamos a hacer modificaciones al servidor, vamos a hacer una copia de seguridad para que en el caso que algo falle no perdamos el servidor por completo, esto lo haremos con el comando ```sud[...]
 Las modificaciones que vamos a hacer son las siguientes: <br>
   **1. Cambiar la página de inicio**<br>
   Para esto utilizaremos el siguiente comando ```echo "<h1>Servidor de TU NOMBRE</h1>" | sudo tee /var/www/html/index.html``` <br>
   ![Captura del resultado final](./Imagenes/6.1.png)<br>
   **2. Cambiar el puerto de escucha**<br>
-  Para esto vamos a necesitar utilizar ```sudo nano /etc/apache2/ports.conf```, aqui cambiaremos Listen 80 por Listen 8080, y ```sudo nano /etc/apache2/sites-available/000-default.conf``` donde cambiaremos *<VirtualHost *:80>** por *<VirtualHost *:8080>**
+  Para esto vamos a necesitar utilizar ```sudo nano /etc/apache2/ports.conf```, aqui cambiaremos Listen 80 por Listen 8080, y ```sudo nano /etc/apache2/sites-available/000-default.conf``` donde cambia[...]
   <br>
 Para despues utilizar los siguientes comandos ```sudo apache2ctl configtest```, ```sudo systemctl reload apache2``` y ```curl -I http://localhost:8080``` <br>
   ![Captura del resultado final](./Imagenes/6.2.png)<br>
   **3. Definir el nombre del servidor**
-  Esto lo vamos a hacer para eliminar el aviso que salia de *"Could not neriably determine the server's fully qualified name"*. Esto lo haremos con los siguientes comandos ```echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf```, ```sudo a2enconf servername``` y ```sudo systemctl reload apache2``` <br>
+  Esto lo vamos a hacer para eliminar el aviso que salia de *"Could not neriably determine the server's fully qualified name"*. Esto lo haremos con los siguientes comandos ```echo "ServerName localhos[...]
  ![Captura del resultado final](./Imagenes/6.3.png)<br>
  **4. Cambiar el correo del administrador**
  Para esto entraremos en el fichero 000-default.conf con el comando ```sudo nano /etc/apache2/sites-available/000-default.conf``` y cambiaremos el ServerAdmin por nuestro correo <br>
@@ -129,7 +131,7 @@ Y probaremos que funcionen con:<br>
  ![Captura del resultado final](./Imagenes/curl_sitios.png)<br>
   ![Captura del resultado final](./Imagenes/apache2ctl_-S.png)<br>
 > ¿Qué diferencia hay entre virtual hosts basados en nombre y basados en IP? ¿Cuál has usado?<br>
-Que las basadas en el nombre nos permiten alojar varias páginas web en una misma dirección IP y Apache identifica qué sitio debe mostrar según el nombre de dominio solicitado y las basadas en IP utilizan direcciones IP diferentes para distinguir los sitios web. En esta practica he utilizado virtual host basaados en el nombre, ya que a pesar de estsar en la misma IP se diferenciaban por el nombre
+Que las basadas en el nombre nos permiten alojar varias páginas web en una misma dirección IP y Apache identifica qué sitio debe mostrar según el nombre de dominio solicitado y las basadas en IP u[...]
 ### Apartado 9. Permisos y propietarios
 Le daremos unos permisos razonables a los sitios con los siguientes comandos:<br>
 ```sudo chown -R www-data:www-data /var/www/sitio1```<br>
@@ -145,4 +147,4 @@ El 644 significa que el propietario puede leer y escribir. El grupo y los demás
 > Por qué nunca se deben usar permisos 777 en un servidor web.
 Porque permiten que cualquier usuario pueda leer, modificar y ejecutar archivos. Esto supone un riesgo de seguridad, ya que alguien podría modificar la página web o introducir código malicioso.
 > Por qué el contenido web no debe pertenecer a root ni ser escribible por todos.
-Porque Apache necesita acceder a los archivos para mostrar la página web, pero no es necesario que tenga permisos para modificarlos. Si los archivos fueran escribibles por todos, cualquier usuario podría cambiar su contenido. Por eso, es importante establecer un propietario adecuado y permisos seguros para evitar modificaciones no autorizadas.
+Porque Apache necesita acceder a los archivos para mostrar la página web, pero no es necesario que tenga permisos para modificarlos. Si los archivos fueran escribibles por todos, cualquier usuario po[...]
