@@ -1,8 +1,6 @@
 # 🚀 MI PRÁCTICA DE APACHE
 
-<p align="center">
-  ![Texto alternativo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9Ww5Olak6nsRWonKS6xlE17aaXRF2oB72-3t-PacbcJ11Dsoq-egWKA&s=10.png)
-</p>
+![Captura del resultado final](./Imagenes/logo_apache.png)<br>
 
 <p align="center">
   <strong>🌐 INSTALACIÓN · CONFIGURACIÓN · SEGURIDAD</strong>
