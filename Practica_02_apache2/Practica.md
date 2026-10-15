@@ -1,4 +1,30 @@
-# Práctica: Instalación, configuración y securización de Apache en Ubuntu 24.04
+# 🚀 MI PRÁCTICA DE APACHE
+
+<p align="center">
+  <img src="[https://www.apache.org/img/httpd.svg](https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fseeklogo.com%2Fvector-logo%2F314278%2Fapache&ved=0CBcQjRxqFwoTCICvp-DHu5cDFQAAAAAdAAAAABA4&opi=89978449)" alt="Logo de Apache HTTP Server" width="220">
+</p>
+
+<p align="center">
+  <strong>🌐 INSTALACIÓN · CONFIGURACIÓN · SEGURIDAD</strong>
+</p>
+
+---
+
+<p align="center">
+   💻 APLICACIONES WEB
+</p>
+
+<br>
+
+## 👨‍💻 Datos del alumno
+
+- **Nombre:** Tu nombre
+- **Curso:** 2.º SMR
+- **Centro:** Nombre de tu instituto
+- **Fecha:** 15/10/2026
+
+
+---
 ## 4. Desarrollo de la práctica
 ### Apartado 1. Preparación del sistema
 Primero actualizaremos los repositorios de ubuntu con el comando ```sudo apt update```<br>
