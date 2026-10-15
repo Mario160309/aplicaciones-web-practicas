@@ -1,7 +1,7 @@
 # 🚀 MI PRÁCTICA DE APACHE
 
 <p align="center">
-  <img src="[https://www.apache.org/img/httpd.svg](https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fseeklogo.com%2Fvector-logo%2F314278%2Fapache&ved=0CBcQjRxqFwoTCICvp-DHu5cDFQAAAAAdAAAAABA4&opi=89978449)" alt="Logo de Apache HTTP Server" width="220">
+  ![Texto alternativo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9Ww5Olak6nsRWonKS6xlE17aaXRF2oB72-3t-PacbcJ11Dsoq-egWKA&s=10.png)
 </p>
 
 <p align="center">
