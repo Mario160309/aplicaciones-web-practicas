@@ -147,3 +147,7 @@ El 644 significa que el propietario puede leer y escribir. El grupo y los demás
 Porque permiten que cualquier usuario pueda leer, modificar y ejecutar archivos. Esto supone un riesgo de seguridad, ya que alguien podría modificar la página web o introducir código malicioso.
 > Por qué el contenido web no debe pertenecer a root ni ser escribible por todos.
 Porque Apache necesita acceder a los archivos para mostrar la página web, pero no es necesario que tenga permisos para modificarlos. Si los archivos fueran escribibles por todos, cualquier usuario po[...]
+
+## Conclusión
+
+En esta practica he podido aprender a instalar y configurar apache Server, y hacer modificaciones dentro de este, aparte de aprender a gestionar los modulos y permisos que este lleva. Ademas de poder aprender varios conceptos como los 'VirtualHost' basados en IP/Nombre 
