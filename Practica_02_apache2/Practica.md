@@ -18,7 +18,7 @@
 
 ##  Datos del alumno
 
-- **Nombre:** Mario ALemany Cobo
+- **Nombre:** Mario Alemany Cobo
 - **Curso:** 2.º SMR
 - **Fecha:** 16/10/2026
 
