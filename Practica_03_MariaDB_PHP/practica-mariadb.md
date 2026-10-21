@@ -39,3 +39,18 @@
 |```sudo systemctl restart mariadb```| Reinicia el servicio |
 |```sudo systemctl status mariadb```| Muestra su estado |
 |```sudo systemctl enable mariadb```| Lo arranca automáticamente al encender el equipo |
+
+### Apartado 5. ¿Qué pasa si MariaDB está parado?
+
+### Apartado 6. Instalación de PHP
+| Paquete | Función |
+|---|---|
+| ```php``` | El lenguaje PHP |
+| ```libapache2-mod-php``` | Permite a Apache ejecutar PHP |
+| ```php-mysql``` | **Permite a PHP hablar con MariaDB (imprescindible)** |
+| ```php-curl``` | Conexiones a otros servidores (actualizaciones, plugins) |
+| ```php-gd``` | Tratamiento de imágenes |
+| ```php-mbstring``` | Manejo de textos con tildes y caracteres especiales |
+| ```php-xml``` | Lectura y escritura de ficheros XML |
+| ```php-zip``` | Instalación y actualización de plugins y temas |
+| ```php-intl``` | Idiomas y formatos regionales |
