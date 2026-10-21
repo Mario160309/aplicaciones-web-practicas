@@ -33,4 +33,9 @@
 ### Apartado 4. Comandos principales
 
 |Comando                      | Función             |
-|sudo systemctl start mariadb | Arranca el servicio |
+|-------------------------------------|-----------------------------------------------|
+|```sudo systemctl start mariadb``` | Arranca el servicio |
+|```sudo systemctl stop mariadb```| Detiene el servicio |
+|```sudo systemctl restart mariadb```| Reinicia el servicio |
+|```sudo systemctl status mariadb```| Muestra su estado |
+|```sudo systemctl enable mariadb```| Lo arranca automáticamente al encender el equipo |
