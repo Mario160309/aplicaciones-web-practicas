@@ -24,4 +24,4 @@
 
 ---
 ## 4. Desarrollo de la práctica
- ### Apartado 1. Preparación del sistema
+### Apartado 1. Preparación del sistema
