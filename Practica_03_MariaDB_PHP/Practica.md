@@ -23,4 +23,5 @@
 - **Fecha:** 23/10/2026
 
 ---
- ## Apartado 1. Preparación del sistema
+## 4. Desarrollo de la práctica
+ ### Apartado 1. Preparación del sistema
