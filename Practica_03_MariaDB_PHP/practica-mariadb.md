@@ -51,8 +51,7 @@ Si MariaBD esta parado e intentamos entrar, nos mostrara un error como este:
 Despues volveremos a arrancarlo y comprobaremos que todo este en orden con:<br>
 ```sudo systemctl start mariadb```
 ```systemctl is-active mariadb```
-> Si WordPress no pudiera conectar con la base de datos, ¿qué dos comandos de este apartado usarías
-para saber si el problema es que MariaDB está parado?
+> Si WordPress no pudiera conectar con la base de datos, ¿qué dos comandos de este apartado usarías para saber si el problema es que MariaDB está parado?<BR>
 Utilizaria ```systemctl is-active mariadb``` y ```sudo mariadb``` ya que el primero nos dira si esta activo y el segundo nos dira si hay algun error
 ### Apartado 6. Instalación de PHP
 | Paquete | Función |
@@ -66,6 +65,9 @@ Utilizaria ```systemctl is-active mariadb``` y ```sudo mariadb``` ya que el prim
 | ```php-xml``` | Lectura y escritura de ficheros XML |
 | ```php-zip``` | Instalación y actualización de plugins y temas |
 | ```php-intl``` | Idiomas y formatos regionales |
-
+Instalaremos PHP con los siguientes comandos: ```sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-zip```, ```php-intl -y``` y con ```php -v``` comprobaremos la version de este mismo
 ![Captura del resultado final](./Imagenes/Captura_6.png)<br>
+Y buscaremos en el navegador *http://IP_DE_TU_SERVIDOR/info.php*, aqui nos debera aparecer la siguiente pagina con la version de PHP
 ![Captura del resultado final](./Imagenes/Captura_6.2.png)<br>
+> ¿Por qué es peligroso dejar info.php en un servidor real? ¿Para qué sirve el paquete php-mysql? <br>
+Dejar un archivo info.php (que ejecuta la función phpinfo()) accesible públicamente en un servidor en producción es un riesgo de seguridad grave por fuga de información (Information Disclosure).
