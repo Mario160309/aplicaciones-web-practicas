@@ -31,7 +31,10 @@ En este apartado vamos a preparar el sistema para poder instalar MariaDB y PHP c
 Y ahora instalaremos MariaDB con el siguiente comando ```sudo apt install mariadb-server -y``` y comprobaremos la version con:
 ![Captura del resultado final](./Imagenes/Captura_2.png)<br>
 ### Apartado 3. Comprobación del funcionamiento
-
+Vamos a comprobar el estado en el que se encuentra MariaDB
+![Captura del resultado final](./Imagenes/Captura_3.1.png)<br>
+Y entraremos en la base de datos d MariaDB con el siguiente comando:
+![Captura del resultado final](./Imagenes/Captura_3.2.png)<br>
 ### Apartado 4. Comandos principales
 
 |Comando                      | Función             |
@@ -44,6 +47,7 @@ Y ahora instalaremos MariaDB con el siguiente comando ```sudo apt install mariad
 
 ### Apartado 5. ¿Qué pasa si MariaDB está parado?
 
+![Captura del resultado final](./Imagenes/Captura_4.png)<br>
 ### Apartado 6. Instalación de PHP
 | Paquete | Función |
 |---|---|
