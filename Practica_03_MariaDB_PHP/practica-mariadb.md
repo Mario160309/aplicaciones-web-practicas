@@ -51,7 +51,9 @@ Si MariaBD esta parado e intentamos entrar, nos mostrara un error como este:
 Despues volveremos a arrancarlo y comprobaremos que todo este en orden con:<br>
 ```sudo systemctl start mariadb```
 ```systemctl is-active mariadb```
-
+> Si WordPress no pudiera conectar con la base de datos, ¿qué dos comandos de este apartado usarías
+para saber si el problema es que MariaDB está parado?
+Utilizaria ```systemctl is-active mariadb``` y ```sudo mariadb``` ya que el primero nos dira si esta activo y el segundo nos dira si hay algun error
 ### Apartado 6. Instalación de PHP
 | Paquete | Función |
 |---|---|
@@ -64,3 +66,6 @@ Despues volveremos a arrancarlo y comprobaremos que todo este en orden con:<br>
 | ```php-xml``` | Lectura y escritura de ficheros XML |
 | ```php-zip``` | Instalación y actualización de plugins y temas |
 | ```php-intl``` | Idiomas y formatos regionales |
+
+![Captura del resultado final](./Imagenes/Captura_6.png)<br>
+![Captura del resultado final](./Imagenes/Captura_6.2.png)<br>
