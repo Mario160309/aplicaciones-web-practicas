@@ -25,9 +25,11 @@
 ---
 ## 4. Desarrollo de la práctica
 ### Apartado 1. Preparación del sistema
-
+En este apartado vamos a preparar el sistema para poder instalar MariaDB y PHP correctamente. Para esto vamos a borrar los sitios que hicimos en la practica anterior y actualizaremos apache  y comprobaremos que siga funvionando con el siguiente comando:
+![Captura del resultado final](./Imagenes/Captura_1.png)<br>
 ### Apartado 2. Instalación de MariaDB
-
+Y ahora instalaremos MariaDB con el siguiente comando ```sudo apt install mariadb-server -y``` y comprobaremos la version con:
+![Captura del resultado final](./Imagenes/Captura_2.png)<br>
 ### Apartado 3. Comprobación del funcionamiento
 
 ### Apartado 4. Comandos principales
