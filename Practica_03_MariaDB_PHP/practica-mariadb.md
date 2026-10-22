@@ -46,8 +46,12 @@ Y entraremos en la base de datos d MariaDB con el siguiente comando:
 |```sudo systemctl enable mariadb```| Lo arranca automáticamente al encender el equipo |
 
 ### Apartado 5. ¿Qué pasa si MariaDB está parado?
-
+Si MariaBD esta parado e intentamos entrar, nos mostrara un error como este:
 ![Captura del resultado final](./Imagenes/Captura_4.png)<br>
+Despues volveremos a arrancarlo y comprobaremos que todo este en orden con:<br>
+```sudo systemctl start mariadb```
+```systemctl is-active mariadb```
+
 ### Apartado 6. Instalación de PHP
 | Paquete | Función |
 |---|---|
