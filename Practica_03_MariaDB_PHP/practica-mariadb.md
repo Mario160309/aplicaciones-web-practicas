@@ -20,7 +20,7 @@
 
 - **Nombre:** Mario Alemany Cobo
 - **Curso:** 2º SMR
-- **Fecha:** 23/10/2026
+- **Fecha:** 22/10/2026
 
 ---
 ## 4. Desarrollo de la práctica
