@@ -206,3 +206,11 @@ Primero comprobaría si MariaDB está funcionando con el comando systemctl is-ac
 Si MariaDB está funcionando, comprobaría que el usuario, la contraseña y el nombre de la base de datos sean correctos. Para ello, intentaría conectarme con mariadb -u *'usuario'* -p wordpress.
 
 ### Apartado 10. Comprobación final
+
+| Pieza | Programa | Estado |
+| :--- | :--- | :--- |
+| **Linux** | Ubuntu 24.04 | Instalado |
+| **Apache** | Apache2, con un único sitio | Funcionando |
+| **MariaDB** | MariaDB 10.11 | Funcionando, con la base `wordpress` |
+| **PHP** | PHP 8.3 | Funcionando |
+| **WordPress** | Instalado en `/var/www/html` | Funcionando y accesible desde el navegador |
