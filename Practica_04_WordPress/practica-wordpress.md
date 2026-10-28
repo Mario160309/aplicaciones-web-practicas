@@ -110,6 +110,8 @@ Es necesario cambiar el propietario a www-data para que Apache pueda trabajar co
 
 ### Apartado 5. Terminar la instalación desde el navegador (la parte gráfica)
 En este apartadi vamos a terminar la instalacion de EordPress, pero ahora lo haremis con interfaz grafica| Pantalla | Qué hacer |
+
+| Pantalla | Qué hacer |
 | :--- | :--- |
 | 1. Idioma | Elige **Español** y pulsa *Continuar* |
 | 2. Bienvenida | Pulsa *¡Vamos a ello!* |
@@ -117,6 +119,7 @@ En este apartadi vamos a terminar la instalacion de EordPress, pero ahora lo har
 | 4. Todo en orden | Pulsa *Iniciar la instalación* |
 | 5. Información necesaria | Rellena la segunda tabla y pulsa *Instalar WordPress* |
 | 6. Éxito | Pulsa *Iniciar sesión* |
+
 *En esata parte he tenido problemas, ya que las pantallas: 1,2 se han saltado y estaba en un bucle constante entre la pantalla 3 y 4*
 ![Captura del resultado final](./Imagenes/Captura_5.png)<br>
 *No haba leido lo de la pantalla 3, por eso solo sale la 5*
@@ -126,7 +129,13 @@ En este apartadi vamos a terminar la instalacion de EordPress, pero ahora lo har
 En la terminal he comprobado los servicios, configurado Apache, creado la base de datos y su usuario, descargado los archivos de WordPress y configurado sus permisos. En el navegador he terminado la instalación, indicando los datos de conexión a la base de datos, el título de la web y el usuario administrador.
 
 ### Apartado 6. Comprobamos que WordPress funciona
-
+En este apartado vamos a comproabr que WordPress funciona bien
+1. Comprobaremos que la web sea publica abriendo en el navegador **http://*IP_DEL_SERVIDOR***
+2. El panel de administracion con **http://*IP_DEL_SERVIDOR*/wp-admin**
+3. Publicaremos una entrada: Desde el menu principal de wordpress en entradas añadiremos una nueva entrada a nuestra pagina
+![Captura del resultado final](./Imagenes/Captura_6.1.png)<br>
+4. Comprobaremos donde ha guardado WordPress nuestra entrada con: `sudo mariadb wordpress -e "SHOW TABLES;"`
+5. ![Captura del resultado final](./Imagenes/Captura_6.2.png)<br>
 > ¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?<br>
 WordPress guarda las entradas en la base de datos de MariaDB, concretamente en la tabla wp_posts. Lo he comprobado ejecutando el comando sudo mariadb wordpress -e "SHOW TABLES;", que muestra las tablas creadas por WordPress. Los archivos de la web se guardan en /var/www/html, pero el contenido de las entradas se almacena en la base de datos
 
