@@ -43,3 +43,22 @@
 > Explica qué hace cada una de las órdenes que has ejecutado. ¿Por qué hay que cambiar el propietario de la carpeta de WordPress a www-data? ¿Qué podría fallar si siguiera siendo tu usuario?
 
 ### Apartado 5. Terminar la instalación desde el navegador (la parte gráfica)
+
+> ¿Qué partes de la instalación has hecho en la terminal y cuáles en el navegador? ¿Por qué el servidor no necesita tener interfaz gráfica?
+
+### Apartado 6. Comprobamos que WordPress funciona
+
+> ¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?
+
+### Apartado 7. Para que no se rompa si cambia la IP (recomendado)
+
+
+### Apartado 8. Dos ajustes para trabajar cómodamente
+
+> ¿Por qué las direcciones "bonitas" dan error 404 si Apache no tiene permitido leer el fichero .htaccess?
+
+### Apartado 9. ¿Qué pasa si MariaDB se para?
+
+> Cuando WordPress muestra "Error al establecer una conexión con la base de datos", ¿qué dos cosas comprobarías y en qué orden?
+
+### Apartado 10. Comprobación final
