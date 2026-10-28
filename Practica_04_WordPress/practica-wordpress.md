@@ -20,15 +20,17 @@
 
 - **Nombre:** Mario Alemany Cobo
 - **Curso:** 2º SMR
-- **Fecha:** 23/10/2026
+- **Fecha:** 28/10/2026
 
 ---
 ## 5. Desarrollo de la práctica
 
 ### Apartado 1. Conexión por SSH y comprobación del servidor
 Para empezar la practica vamos a necesitar establecer la conexion a traves de ssh con ```ssh TU_USUARIO@IP_DEL_SERVIDOR``` y comprobaremos que todo lo que hemos ehcho en las practias anteriores sigue funcionando con: <br>
-```systemctl is-active apache2 mariadb``` <br>
-```php -v```
+```
+systemctl is-active apache2 mariadb
+php -v
+```
 
 ![Captura del resultado final](./Imagenes/Captura_1.png)<br>
 
@@ -36,17 +38,32 @@ Para empezar la practica vamos a necesitar establecer la conexion a traves de ss
 Utilizo SSH, que funciona por el puerto 22, para conectarme al servidor desde la terminal y ejecutar comandos. También utilizo HTTP, que funciona por el puerto 80, para acceder a WordPress desde el navegador y ver la página web
 
 ### Apartado 2. Dejar Apache con un único sitio
-En este apartado vamos a bor
-
-*no sabia si la captura era de todos los comandos del apartado 2 o si era solo los que habia arriba, por eso solo he hecho los de arriba*
+En este apartado vamos a desactivar los dos sitios que teníamos creados en la práctica anterior y activaremos  el sitio por defecto de Apache con los siguientes comandos:
+```
+sudo a2dissite sitio1.conf sitio2.conf
+sudo a2ensite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+```
+Después, comprobamos que solo hay un sitio activo y que podemos acceder al servidor desde el navegador utilizando la dirección IP
 
 ![Captura del resultado final](./Imagenes/CAptura_2.1.png)<br>
+*no sabia si la captura era de todos los comandos del apartado 2 o si era solo los que habia arriba, por eso solo he hecho los de arriba*
 ![Captura del resultado final](./Imagenes/CAptura2.2.png)<br>
 
 > ¿Qué diferencia hay entre desactivar un sitio con a2dissite y borrar sus ficheros? ¿Por qué ahora ves la página por defecto de Apache y antes veías sitio1?<br>
 Desactivar un sitio con a2dissite hace que Apache deje de utilizarlo, pero sus archivos siguen guardados en el servidor. En cambio, borrar sus ficheros elimina esos archivos. Ahora veo la página por defecto porque he desactivado los sitios anteriores y he activado 000-default.conf. Antes veía sitio1 porque estaba configurado como el sitio que Apache mostraba al acceder al servidor.
 
 ### Apartado 3. Crear la base de datos de WordPress
+En este apartado vamos a crear la base de datos de wordpress y nuestro usuario y le daremos los permisos necesarios. Entraremos en maria db con el comando `sudo mariadb` <br>
+Y crearemos lo siguiente:
+| Qué creamos | Nombre | Para qué | Comando que utilizamos |
+| :--- | :--- | :--- | :--- |
+| El **armario** (base de datos) | `wordpress` | Donde WordPress guardará todos sus datos | `CREATE DATABASE wordpress;` |
+| La **llave** (usuario) | `wp_user` | Con lo que WordPress entrará en el armario | `CREATE USER 'TU_USUARIO'@'localhost' IDENTIFIED BY '*TU_CONTRASEÑA*';` |
+| El **permiso** | Todos, pero **solo sobre** `wordpress` | Esa llave abre ese armario y ningún otro | `GRANT ALL ON wordpress.* TO 'wp_user'@'localhost';` |
+
+![Captura del resultado final](./Imagenes/Captura_3.png)<br>
 
 > ¿Por qué crees que WordPress usa su propio usuario wp_user con permiso solo sobre su base y no el usuario root de MariaDB?<br>
 Porque es más seguro utilizar un usuario que solo tenga permisos sobre la base de datos de WordPress. Así, si alguien consigue acceder a WordPress, tendrá menos posibilidades de modificar o borrar otras bases de datos del servidor. El usuario root tiene permisos mucho más amplios y sería más peligroso utilizarlo.
