@@ -135,12 +135,22 @@ En este apartado vamos a comproabr que WordPress funciona bien
 3. Publicaremos una entrada: Desde el menu principal de wordpress en entradas añadiremos una nueva entrada a nuestra pagina
 ![Captura del resultado final](./Imagenes/Captura_6.1.png)<br>
 4. Comprobaremos donde ha guardado WordPress nuestra entrada con: `sudo mariadb wordpress -e "SHOW TABLES;"`
-5. ![Captura del resultado final](./Imagenes/Captura_6.2.png)<br>
+![Captura del resultado final](./Imagenes/Captura_6.2.png)<br>
 > ¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?<br>
 WordPress guarda las entradas en la base de datos de MariaDB, concretamente en la tabla wp_posts. Lo he comprobado ejecutando el comando sudo mariadb wordpress -e "SHOW TABLES;", que muestra las tablas creadas por WordPress. Los archivos de la web se guardan en /var/www/html, pero el contenido de las entradas se almacena en la base de datos
+5. Donde esta cada cosa
+> 
+| Qué | Dónde |
+| :--- | :--- |
+| Los ficheros de WordPress | `/var/www/html/` |
+| La conexión con la base de datos | `/var/www/html/wp-config.php` (**no lo compartas nunca**: contiene la contraseña) |
+| Temas, plugins e imágenes subidas | `/var/www/html/wp-content/` (carpetas `themes`, `plugins` y `uploads`) |
+| Las entradas, usuarios y ajustes | En la base de datos `wordpress` de MariaDB |
 
 ### Apartado 7. Para que no se rompa si cambia la IP (recomendado)
 
+![Captura del resultado final](./Imagenes/Captura_7.1.png)<br>
+![Captura del resultado final](./Imagenes/Captura_7.2.png)<br>
 
 ### Apartado 8. Dos ajustes para trabajar cómodamente
 
