@@ -109,6 +109,18 @@ ls -ld /var/www/html
 Es necesario cambiar el propietario a www-data para que Apache pueda trabajar correctamente con los archivos de WordPress. Si siguiera siendo mi usuario, podrían aparecer problemas al subir imágenes, instalar plugins o modificar archivos desde el panel de administración.
 
 ### Apartado 5. Terminar la instalación desde el navegador (la parte gráfica)
+En este apartadi vamos a terminar la instalacion de EordPress, pero ahora lo haremis con interfaz grafica| Pantalla | Qué hacer |
+| :--- | :--- |
+| 1. Idioma | Elige **Español** y pulsa *Continuar* |
+| 2. Bienvenida | Pulsa *¡Vamos a ello!* |
+| 3. Datos de la base de datos | Rellena la tabla de abajo y pulsa *Enviar* |
+| 4. Todo en orden | Pulsa *Iniciar la instalación* |
+| 5. Información necesaria | Rellena la segunda tabla y pulsa *Instalar WordPress* |
+| 6. Éxito | Pulsa *Iniciar sesión* |
+*En esata parte he tenido problemas, ya que las pantallas: 1,2 se han saltado y estaba en un bucle constante entre la pantalla 3 y 4*
+![Captura del resultado final](./Imagenes/Captura_5.png)<br>
+*No haba leido lo de la pantalla 3, por eso solo sale la 5*
+![Captura del resultado final](./Imagenes/Captura_5.2.png)<br>
 
 > ¿Qué partes de la instalación has hecho en la terminal y cuáles en el navegador? ¿Por qué el servidor no necesita tener interfaz gráfica?<br>
 En la terminal he comprobado los servicios, configurado Apache, creado la base de datos y su usuario, descargado los archivos de WordPress y configurado sus permisos. En el navegador he terminado la instalación, indicando los datos de conexión a la base de datos, el título de la web y el usuario administrador.
