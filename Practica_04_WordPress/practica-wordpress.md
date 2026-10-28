@@ -160,11 +160,46 @@ Lo guardaremos y comprobaremos que no hay ningun error con: ```php -l /var/www/h
 ![Captura del resultado final](./Imagenes/Captura_7.2.png)<br>
 
 ### Apartado 8. Dos ajustes para trabajar cómodamente
+En el siguiente apartado vamos a hacer que las direcciones sean mas sencillas, para esto necesitaremos crear un fichero llamado `.htaccess`, pero primero permitiremos que Apache lea ese fichero en la carpeta WordPress con los siguientes comandos 
+```
+sudo nano /etc/apache2/conf-available/wordpress.conf
+
+<Directory /var/www/html>
+    AllowOverride All
+</Directory>
+```
+Shora vamos a activar el modulo `rewrite` con los comadnos siguientes:
+```
+sudo a2enmod rewrite
+sudo a2enconf wordpress
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+```
+Ahora vamos a ir a WordPress y en Ajustes-> Enlaces permanentes. Cambiaremos la opcion a nombre de la entrada y guardaremos la configuracion<br>
+Y haremos una entrada de prueba<br>
+Ameas, WordPress ya habra creado el fichero `.htaccess`, lo comprobaremos con ```ls -la /var/www/html/.htaccess```<br>
+![Captura del resultado final](./Imagenes/CAptura_8.1.png)<br>
+Ahora lo que vamos a hacer va a ser configurar para que nos deje subir archivos mas grandes, esto lo haremos con los siguientes comandos:<br>
+```
+printf 'upload_max_filesize = 64M\npost_max_size = 64M\n' | sudo tee /etc/php/8.3/apache2/conf.d/99-wordpress.ini
+sudo systemctl restart apache2
+````
+Y ahora ya nos dejara subir archivos de hasta 64MB<br>
+![Captura del resultado final](./Imagenes/CAptura_8.2.png)<br>
 
 > ¿Por qué las direcciones "bonitas" dan error 404 si Apache no tiene permitido leer el fichero .htaccess?<br>
 Porque WordPress utiliza el archivo .htaccess para indicar a Apache cómo gestionar las direcciones de las entradas. Si Apache no tiene permitido leer ese archivo, no aplica las reglas necesarias para encontrar las páginas y puede mostrar un error 404, que significa que no se ha encontrado la página solicitada.
 
 ### Apartado 9. ¿Qué pasa si MariaDB se para?
+En este apartado vamos a comprobar que pasaria si MariaDB se parará. <br>
+Primero, pararemos mariadb con: `sudo systemctl stop mariadb`, al recargar la pagina ahora nos saldra un errror como el siguiente<br>
+![Captura del resultado final](./Imagenes/CAptura_9.1.png)<br>
+Ahora activaremos otra vez el servidor para recuperar la web, esto lo haremos con los siguientes comandos:
+```
+sudo systemctl start mariadb
+systemctl is-active mariadb
+```
+![Captura del resultado final](./Imagenes/CAptura_9.2.png)<br>
 
 > Cuando WordPress muestra "Error al establecer una conexión con la base de datos", ¿qué dos cosas comprobarías y en qué orden?<br>
 Primero comprobaría si MariaDB está funcionando con el comando systemctl is-active mariadb. Si está parado, lo iniciaría con sudo systemctl start mariadb.<br>
