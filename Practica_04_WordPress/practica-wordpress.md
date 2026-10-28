@@ -70,6 +70,9 @@ Porque es más seguro utilizar un usuario que solo tenga permisos sobre la base 
 
 ### Apartado 4. Descargar e instalar los ficheros de WordPress
 
+
+![Captura del resultado final](./Imagenes/Captura_4(copy).png)<br>
+
 > Explica qué hace cada uno de los comandos que acabas de ejecutar.<br>
 **sudo apt install wget -y**: instala la herramienta wget, que sirve para descargar archivos de Internet.<br>
 **cd /tmp**: entra en la carpeta temporal del sistema.<br>
