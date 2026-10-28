@@ -148,8 +148,15 @@ WordPress guarda las entradas en la base de datos de MariaDB, concretamente en l
 | Las entradas, usuarios y ajustes | En la base de datos `wordpress` de MariaDB |
 
 ### Apartado 7. Para que no se rompa si cambia la IP (recomendado)
-
+En este apartado lo que vamos a hacer es cambiar la IP para que no se rompa si la IP de nuestra maquina virtual cambiase por cualquier circunstancia, para esto iremos al siguiente fichero:
+**sudo nano /var/www/html/wp-config.php**
+Y buscaremos la linea que empieza por /* That's all, stop editing!. Delante escribiremos lo siguiente 
+```
+define( 'WP_HOME',    'http://' . $_SERVER['HTTP_HOST'] );
+define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] );
+```
 ![Captura del resultado final](./Imagenes/Captura_7.1.png)<br>
+Lo guardaremos y comprobaremos que no hay ningun error con: ```php -l /var/www/html/wp-config.php```
 ![Captura del resultado final](./Imagenes/Captura_7.2.png)<br>
 
 ### Apartado 8. Dos ajustes para trabajar cómodamente
