@@ -69,9 +69,29 @@ Y crearemos lo siguiente:
 Porque es más seguro utilizar un usuario que solo tenga permisos sobre la base de datos de WordPress. Así, si alguien consigue acceder a WordPress, tendrá menos posibilidades de modificar o borrar otras bases de datos del servidor. El usuario root tiene permisos mucho más amplios y sería más peligroso utilizarlo.
 
 ### Apartado 4. Descargar e instalar los ficheros de WordPress
-
-
-![Captura del resultado final](./Imagenes/Captura_4(copy).png)<br>
+Ahora vamos a descargarnos e instalarnos los ficheros de wordpress, primero necesitaremos descargarlos y descomprimirlos con los siguientes comandos: 
+```
+sudo apt install wget -y
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+ls wordpress
+```
+Ahora lo que vamos va a ser sustituir la pagina de bienvenida de Apache, ya que esta tiene prioridadsobre WordPress y copieremos todo el contenido de la carpeta que hemos extraido anteriormente a la carpeta de nuestro sitio, esto lo haremos con los siguientes comandos: 
+```
+sudo rm /var/www/html/index.html
+sudo cp -a /tmp/wordpress/. /var/www/html/
+rm -r /tmp/wordpress /tmp/latest.tar.gz
+ls /var/www/html
+```
+Para acabar este apartado, vamos a darle los permisos correctos con los siguientes comandos:
+```
+sudo chown -R www-data:www-data /var/www/html
+sudo find /var/www/html -type d -exec chmod 755 {} \;
+sudo find /var/www/html -type f -exec chmod 644 {} \;
+ls -ld /var/www/html
+```
+![Captura del resultado final](./Imagenes/Captura_4.png)<br>
 
 > Explica qué hace cada uno de los comandos que acabas de ejecutar.<br>
 **sudo apt install wget -y**: instala la herramienta wget, que sirve para descargar archivos de Internet.<br>
