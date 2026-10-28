@@ -70,21 +70,26 @@ Es necesario cambiar el propietario a www-data para que Apache pueda trabajar co
 
 ### Apartado 5. Terminar la instalación desde el navegador (la parte gráfica)
 
-> ¿Qué partes de la instalación has hecho en la terminal y cuáles en el navegador? ¿Por qué el servidor no necesita tener interfaz gráfica?
+> ¿Qué partes de la instalación has hecho en la terminal y cuáles en el navegador? ¿Por qué el servidor no necesita tener interfaz gráfica?<br>
+En la terminal he comprobado los servicios, configurado Apache, creado la base de datos y su usuario, descargado los archivos de WordPress y configurado sus permisos. En el navegador he terminado la instalación, indicando los datos de conexión a la base de datos, el título de la web y el usuario administrador.
 
 ### Apartado 6. Comprobamos que WordPress funciona
 
-> ¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?
+> ¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?<br>
+WordPress guarda las entradas en la base de datos de MariaDB, concretamente en la tabla wp_posts. Lo he comprobado ejecutando el comando sudo mariadb wordpress -e "SHOW TABLES;", que muestra las tablas creadas por WordPress. Los archivos de la web se guardan en /var/www/html, pero el contenido de las entradas se almacena en la base de datos
 
 ### Apartado 7. Para que no se rompa si cambia la IP (recomendado)
 
 
 ### Apartado 8. Dos ajustes para trabajar cómodamente
 
-> ¿Por qué las direcciones "bonitas" dan error 404 si Apache no tiene permitido leer el fichero .htaccess?
+> ¿Por qué las direcciones "bonitas" dan error 404 si Apache no tiene permitido leer el fichero .htaccess?<br>
+Porque WordPress utiliza el archivo .htaccess para indicar a Apache cómo gestionar las direcciones de las entradas. Si Apache no tiene permitido leer ese archivo, no aplica las reglas necesarias para encontrar las páginas y puede mostrar un error 404, que significa que no se ha encontrado la página solicitada.
 
 ### Apartado 9. ¿Qué pasa si MariaDB se para?
 
-> Cuando WordPress muestra "Error al establecer una conexión con la base de datos", ¿qué dos cosas comprobarías y en qué orden?
+> Cuando WordPress muestra "Error al establecer una conexión con la base de datos", ¿qué dos cosas comprobarías y en qué orden?<br>
+Primero comprobaría si MariaDB está funcionando con el comando systemctl is-active mariadb. Si está parado, lo iniciaría con sudo systemctl start mariadb.<br>
+Si MariaDB está funcionando, comprobaría que el usuario, la contraseña y el nombre de la base de datos sean correctos. Para ello, intentaría conectarme con mariadb -u *'usuario'* -p wordpress.
 
 ### Apartado 10. Comprobación final
