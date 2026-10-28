@@ -28,6 +28,9 @@
 ### Apartado 1. Conexión por SSH y comprobación del servidor
 
 
+
+> ¿Qué dos "puertas" (programas y puertos) usas para trabajar con el servidor en esta práctica y para qué sirve cada una?
+
 ### Apartado 2. Dejar Apache con un único sitio
 
 > ¿Qué diferencia hay entre desactivar un sitio con a2dissite y borrar sus ficheros? ¿Por qué ahora ves la página por defecto de Apache y antes veías sitio1?
