@@ -26,24 +26,47 @@
 ## 5. Desarrollo de la práctica
 
 ### Apartado 1. Conexión por SSH y comprobación del servidor
+Para empezar la practica vamos a necesitar establecer la conexion a traves de ssh con ```ssh TU_USUARIO@IP_DEL_SERVIDOR``` y comprobaremos que todo lo que hemos ehcho en las practias anteriores sigue funcionando con: <br>
+```systemctl is-active apache2 mariadb``` <br>
+```php -v```
 
+![Captura del resultado final](./Imagenes/Captura_1.png)<br>
 
-
-> ¿Qué dos "puertas" (programas y puertos) usas para trabajar con el servidor en esta práctica y para qué sirve cada una?
+> ¿Qué dos "puertas" (programas y puertos) usas para trabajar con el servidor en esta práctica y para qué sirve cada una?<br>
+Utilizo SSH, que funciona por el puerto 22, para conectarme al servidor desde la terminal y ejecutar comandos. También utilizo HTTP, que funciona por el puerto 80, para acceder a WordPress desde el navegador y ver la página web
 
 ### Apartado 2. Dejar Apache con un único sitio
+En este apartado vamos a bor
 
-> ¿Qué diferencia hay entre desactivar un sitio con a2dissite y borrar sus ficheros? ¿Por qué ahora ves la página por defecto de Apache y antes veías sitio1?
+*no sabia si la captura era de todos los comandos del apartado 2 o si era solo los que habia arriba, por eso solo he hecho los de arriba*
+
+![Captura del resultado final](./Imagenes/CAptura_2.1.png)<br>
+![Captura del resultado final](./Imagenes/CAptura2.2.png)<br>
+
+> ¿Qué diferencia hay entre desactivar un sitio con a2dissite y borrar sus ficheros? ¿Por qué ahora ves la página por defecto de Apache y antes veías sitio1?<br>
+Desactivar un sitio con a2dissite hace que Apache deje de utilizarlo, pero sus archivos siguen guardados en el servidor. En cambio, borrar sus ficheros elimina esos archivos. Ahora veo la página por defecto porque he desactivado los sitios anteriores y he activado 000-default.conf. Antes veía sitio1 porque estaba configurado como el sitio que Apache mostraba al acceder al servidor.
 
 ### Apartado 3. Crear la base de datos de WordPress
 
-> ¿Por qué crees que WordPress usa su propio usuario wp_user con permiso solo sobre su base y no el usuario root de MariaDB?
+> ¿Por qué crees que WordPress usa su propio usuario wp_user con permiso solo sobre su base y no el usuario root de MariaDB?<br>
+Porque es más seguro utilizar un usuario que solo tenga permisos sobre la base de datos de WordPress. Así, si alguien consigue acceder a WordPress, tendrá menos posibilidades de modificar o borrar otras bases de datos del servidor. El usuario root tiene permisos mucho más amplios y sería más peligroso utilizarlo.
 
 ### Apartado 4. Descargar e instalar los ficheros de WordPress
 
-> Explica qué hace cada uno de los comandos que acabas de ejecutar.
+> Explica qué hace cada uno de los comandos que acabas de ejecutar.<br>
+**sudo apt install wget -y**: instala la herramienta wget, que sirve para descargar archivos de Internet.<br>
+**cd /tmp**: entra en la carpeta temporal del sistema.<br>
+**wget https://wordpress.org/latest.tar.gz**: descarga el archivo comprimido de WordPress desde su página oficial.<br>
+**tar -xzf latest.tar.gz**: descomprime el archivo descargado y crea la carpeta wordpress.<br>
+**ls wordpress**: muestra los archivos y carpetas que contiene WordPress.<br>
+**sudo rm /var/www/html/index.html**: elimina la página de bienvenida de Apache para que no tenga prioridad sobre WordPress.<br>
+**sudo cp -a /tmp/wordpress/. /var/www/html/**: copia todos los archivos de WordPress a la carpeta que utiliza Apache para mostrar la web.<br>
+**rm -r /tmp/wordpress /tmp/latest.tar.gz**: elimina la carpeta temporal de WordPress y el archivo comprimido, ya que los archivos necesarios están copiados en su ubicación definitiva.<br>
+**ls /var/www/html**: muestra el contenido de la carpeta donde hemos instalado WordPress.<br>
+**curl -I http://localhost**: consulta las cabeceras HTTP que devuelve el servidor local para comprobar su respuesta.<br>
 
-> Explica qué hace cada una de las órdenes que has ejecutado. ¿Por qué hay que cambiar el propietario de la carpeta de WordPress a www-data? ¿Qué podría fallar si siguiera siendo tu usuario?
+> Explica qué hace cada una de las órdenes que has ejecutado. ¿Por qué hay que cambiar el propietario de la carpeta de WordPress a www-data? ¿Qué podría fallar si siguiera siendo tu usuario?<br>
+Es necesario cambiar el propietario a www-data para que Apache pueda trabajar correctamente con los archivos de WordPress. Si siguiera siendo mi usuario, podrían aparecer problemas al subir imágenes, instalar plugins o modificar archivos desde el panel de administración.
 
 ### Apartado 5. Terminar la instalación desde el navegador (la parte gráfica)
 
